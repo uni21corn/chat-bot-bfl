@@ -81,7 +81,13 @@ function wait(ms) {
 }
 
 function scrollToBottom() {
-  messages.scrollTop = messages.scrollHeight;
+  const scroll = () => {
+    messages.scrollTop = messages.scrollHeight;
+  };
+
+  scroll();
+  window.requestAnimationFrame(scroll);
+  window.setTimeout(scroll, 80);
 }
 
 function setProgress() {
@@ -142,6 +148,7 @@ function renderOptions(question) {
   });
 
   answerPanel.append(wrapper);
+  scrollToBottom();
 }
 
 async function askQuestion(index) {
@@ -257,6 +264,7 @@ function renderContactForm() {
           <option value="phone">Позвонить</option>
           <option value="whatsapp">WhatsApp</option>
           <option value="telegram">Telegram</option>
+          <option value="max">Макс</option>
         </select>
       </label>
 
@@ -276,6 +284,7 @@ function renderContactForm() {
   const phone = form.elements.phone;
   const phoneError = answerPanel.querySelector("#phoneError");
 
+  scrollToBottom();
   window.setTimeout(() => phone.focus(), 200);
 
   phone.addEventListener("input", () => {
@@ -324,6 +333,7 @@ function renderSuccessActions() {
     <a href="tel:88006003823">Позвонить: 8 800 600 38 23</a>
   `;
   answerPanel.append(wrapper);
+  scrollToBottom();
 }
 
 async function startChat() {
