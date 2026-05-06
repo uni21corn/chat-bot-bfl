@@ -329,6 +329,7 @@ function renderSuccessActions() {
 async function startChat() {
   await wait(760);
   loader.hidden = true;
+  loader.style.display = "none";
   chat.hidden = false;
 
   for (const message of introMessages) {
