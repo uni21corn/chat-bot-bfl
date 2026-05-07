@@ -69,6 +69,13 @@ const botTemplate = document.querySelector("#botMessageTemplate");
 const userTemplate = document.querySelector("#userMessageTemplate");
 const pagePath = window.location.pathname.replace(/\/+$/, "");
 const linkPrefix = pagePath.endsWith("/avito") ? ".." : ".";
+const mainSiteUrl = "https://естьрешение.рф";
+const avatarImageUrl =
+  "https://image2.yell.ru/imager/ZGI0MTMxNWVlMjI0YWVhNDBiN/120x120/responses/0/3/2/r_4rlaqcp0ok5p7knx_1756960302.jpg";
+const avatarMarkup = `
+  <span class="avatar-fallback">Т</span>
+  <img src="${avatarImageUrl}" alt="" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()" />
+`;
 
 const state = {
   questionIndex: -1,
@@ -114,7 +121,7 @@ function showTyping() {
   const node = document.createElement("div");
   node.className = "message message--bot typing";
   node.innerHTML = `
-    <div class="message__avatar">Т</div>
+    <div class="message__avatar">${avatarMarkup}</div>
     <div class="message__bubble">
       <div class="typing-dots" aria-label="Юрист печатает">
         <span></span><span></span><span></span>
@@ -329,7 +336,7 @@ function renderSuccessActions() {
   const wrapper = document.createElement("div");
   wrapper.className = "success-actions";
   wrapper.innerHTML = `
-    <a href="${linkPrefix}/index.html">Вернуться на сайт</a>
+    <a href="${mainSiteUrl}" target="_blank" rel="noopener noreferrer">Вернуться на сайт</a>
     <a href="tel:88006003823">Позвонить: 8 800 600 38 23</a>
   `;
   answerPanel.append(wrapper);

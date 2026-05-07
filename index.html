@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./avito-chat.css?v=20260506-3" />
+    <link rel="stylesheet" href="./avito-chat.css?v=20260507-1" />
   </head>
   <body>
     <main class="chat-app" aria-label="Чат с юристом компании Есть решение">
@@ -29,7 +29,14 @@
           <header class="chat-header">
             <div class="chat-header__top">
               <div class="operator-avatar">
-                <span>Т</span>
+                <span class="avatar-fallback">Т</span>
+                <img
+                  src="https://image2.yell.ru/imager/ZGI0MTMxNWVlMjI0YWVhNDBiN/120x120/responses/0/3/2/r_4rlaqcp0ok5p7knx_1756960302.jpg"
+                  alt=""
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  onerror="this.remove()"
+                />
                 <i aria-hidden="true"></i>
               </div>
               <div>
@@ -53,7 +60,16 @@
 
     <template id="botMessageTemplate">
       <div class="message message--bot">
-        <div class="message__avatar">Т</div>
+        <div class="message__avatar">
+          <span class="avatar-fallback">Т</span>
+          <img
+            src="https://image2.yell.ru/imager/ZGI0MTMxNWVlMjI0YWVhNDBiN/120x120/responses/0/3/2/r_4rlaqcp0ok5p7knx_1756960302.jpg"
+            alt=""
+            decoding="async"
+            referrerpolicy="no-referrer"
+            onerror="this.remove()"
+          />
+        </div>
         <div class="message__bubble">
           <p></p>
         </div>
@@ -68,6 +84,6 @@
       </div>
     </template>
 
-    <script src="./avito-chat.js?v=20260506-3"></script>
+    <script src="./avito-chat.js?v=20260507-1"></script>
   </body>
 </html>
