@@ -70,8 +70,7 @@ const userTemplate = document.querySelector("#userMessageTemplate");
 const pagePath = window.location.pathname.replace(/\/+$/, "");
 const linkPrefix = pagePath.endsWith("/avito") ? ".." : ".";
 const mainSiteUrl = "https://естьрешение.рф";
-const avatarImageUrl =
-  "https://image2.yell.ru/imager/ZGI0MTMxNWVlMjI0YWVhNDBiN/120x120/responses/0/3/2/r_4rlaqcp0ok5p7knx_1756960302.jpg";
+const avatarImageUrl = "./assets/tamara-avatar.png?v=20260507-2";
 const avatarMarkup = `
   <span class="avatar-fallback">Т</span>
   <img src="${avatarImageUrl}" alt="" decoding="async" referrerpolicy="no-referrer" onerror="this.remove()" />
